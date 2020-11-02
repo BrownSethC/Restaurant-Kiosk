@@ -46,18 +46,50 @@ class Menu
         WriteLine($"Replacing {menuItems[location].Trim()} with {newName} now...");
         string text = "";
         menu = menu.ToLower();
+        int size = 0;
+        foreach (var item in menuItems)
+        {
+            if (item.Length > size)
+            {
+                size = item.Length;
+            }
+        }
+        size += 5;
 
         for (var i = 1; i < menuItems.Length; i++)
         {
-            var item = menuItems[i];
+            int numSpaces = 0;
+            var item = menuItems[i].Trim();
+            string space = "";
             if (i == location)
             {
-                text += "-" + newName;
-                menuItems[i] = newName;
+                numSpaces = size-newName.Length;
+                if (numSpaces == 0)
+                {
+                    size += 5;
+                    numSpaces = 5;
+                }
+                for (var j = 0; j < numSpaces; j++)
+                {
+                    space += " ";
+                }
+                text += "-" + newName + space;
+                menuItems[i] = newName + space;
             }
             else
             {
-                text += "-" + item.ToString();
+                space = "";
+                numSpaces = size-item.Length;
+                if (numSpaces == 0)
+                {
+                    size += 5;
+                    numSpaces = 5;
+                }
+                for (var j = 0; j < numSpaces; j++)
+                {
+                    space += " ";
+                }
+                text += "-" + item + space;
             }
             
         }

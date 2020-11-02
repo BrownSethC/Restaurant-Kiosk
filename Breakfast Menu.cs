@@ -21,12 +21,31 @@ class Breakfast_Menu
 
         string prices = "";
         string items = "";
+
+        int size = 0;
+        foreach (var item in newMenu)
+        {
+            if (item.Length > size)
+            {
+                size = item.Length;
+            }
+        }
+        size += 5;
+
+        int numSpaces = 0;
+        string space = "";
+        
         for (var i = 1; i < newPrices.Length; i++)
         {
+            numSpaces = size - (newMenu[i].Length);
+            for (var j = 0; j < numSpaces; j++)
+            {
+                space += " ";
+            }
             var item = newPrices[i].ToString();
             prices += "-" + item;
             item = newMenu[i];
-            items += "-" + item;
+            items += "-" + item + space;
         }
         
         File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Prices.txt", prices);
@@ -49,23 +68,48 @@ class Breakfast_Menu
             {    
                 string[] newMenu = new string[oldMenu.Length];
                 decimal[] newPrices = new decimal[oldPrices.Length];
-                for (var i = 0; i < oldMenu.Length; i++)
+                for (var i = 0; i < (oldMenu.Length-1); i++)
                 {
                     if (i != location)
                     {
                         newMenu[i] = oldMenu[i];
                         newPrices[i] = oldPrices[i];
                     }
+                    else
+                    {
+                        newPrices[i] = 0;
+                    }
                 }
                 
                 string prices = "";
                 string items = "";
+                int size = 0;
+                foreach (var item in newMenu)
+                {
+                    if (item.Length > size)
+                    {
+                        size = item.Length;
+                    }
+                }
+                size += 5;
+
+                int numSpaces = 0;
+                string space = "";
+                
                 for (var i = 1; i < newPrices.Length; i++)
                 {
+                    if (newPrices[i] != 0)
+                    {
+                        numSpaces = size - (newMenu[i].Length);
+                    for (var j = 0; j < numSpaces; j++)
+                    {
+                        space += " ";
+                    }
                     var item = newPrices[i].ToString();
                     prices += "-" + item;
                     item = newMenu[i];
-                    items += "-" + item;
+                    items += "-" + item + space;
+                    }
                 }
                 
                 File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Prices.txt", prices);
@@ -116,10 +160,6 @@ class Breakfast_Menu
             if(prices[i] != 0)
             {
                 menu[i-1] = $"{items[i]}{prices[i]:C2}";
-            }
-            else
-            {
-                menu[i] = "";
             }
         }
         return menu;
