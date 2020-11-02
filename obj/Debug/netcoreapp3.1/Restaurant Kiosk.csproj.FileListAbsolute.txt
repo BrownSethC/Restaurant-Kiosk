@@ -1,0 +1,26 @@
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.exe
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.deps.json
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.runtimeconfig.json
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.runtimeconfig.dev.json
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.dll
+C:\Users\brown\code\Restaurant Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.pdb
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.csprojAssemblyReference.cache
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.AssemblyInfoInputs.cache
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.AssemblyInfo.cs
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.csproj.CoreCompileInputs.cache
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.dll
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.pdb
+C:\Users\brown\code\Restaurant Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.genruntimeconfig.cache
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.exe
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.deps.json
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.runtimeconfig.json
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.runtimeconfig.dev.json
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.dll
+C:\Users\brown\code\Restaurant-Kiosk\bin\Debug\netcoreapp3.1\Restaurant Kiosk.pdb
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.csprojAssemblyReference.cache
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.AssemblyInfoInputs.cache
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.AssemblyInfo.cs
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.csproj.CoreCompileInputs.cache
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.dll
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.pdb
+C:\Users\brown\code\Restaurant-Kiosk\obj\Debug\netcoreapp3.1\Restaurant Kiosk.genruntimeconfig.cache

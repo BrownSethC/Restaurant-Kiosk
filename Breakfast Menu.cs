@@ -1,0 +1,127 @@
+using System;
+using System.IO;
+using static System.Console;
+
+class Breakfast_Menu
+{
+    public static void AddToMenu(decimal price, string itemName)
+    {
+        string[] oldMenu = BreakfastItems();
+        decimal[] oldPrices = BreakfastPrices();
+
+        string[] newMenu = new string[oldMenu.Length+1];
+        decimal[] newPrices = new decimal[oldPrices.Length+1];
+        for (var i = 0; i < oldMenu.Length; i++)
+        {
+            newMenu[i] = oldMenu[i];
+            newPrices[i] = oldPrices[i];
+        }
+        newMenu[newMenu.Length-1] = itemName;
+        newPrices[newPrices.Length-1] = price;
+
+        string prices = "";
+        string items = "";
+        for (var i = 1; i < newPrices.Length; i++)
+        {
+            var item = newPrices[i].ToString();
+            prices += "-" + item;
+            item = newMenu[i];
+            items += "-" + item;
+        }
+        
+        File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Prices.txt", prices);
+        File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Items.txt", items);
+    }
+    public static void RemoveFromMenu(string itemName)
+    {
+        int location = Menu.FindInMenu(itemName, "breakfast");
+        if (location == -1)
+        {
+            WriteLine("Item to remove was not found in the menu. Please check your spelling.");
+        }
+        else
+        {
+            string[] oldMenu = BreakfastItems();
+            decimal[] oldPrices = BreakfastPrices();
+            WriteLine($"{oldMenu[location]} was found while looking for {itemName}.");
+            Write("If this is correct, enter 1: ");
+            if (ReadLine() == "1")
+            {    
+                string[] newMenu = new string[oldMenu.Length];
+                decimal[] newPrices = new decimal[oldPrices.Length];
+                for (var i = 0; i < oldMenu.Length; i++)
+                {
+                    if (i != location)
+                    {
+                        newMenu[i] = oldMenu[i];
+                        newPrices[i] = oldPrices[i];
+                    }
+                }
+                
+                string prices = "";
+                string items = "";
+                for (var i = 1; i < newPrices.Length; i++)
+                {
+                    var item = newPrices[i].ToString();
+                    prices += "-" + item;
+                    item = newMenu[i];
+                    items += "-" + item;
+                }
+                
+                File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Prices.txt", prices);
+                File.WriteAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Items.txt", items);
+            }
+        }
+    }
+    public static void PrintOutMenu()
+    {
+        string[] menu = Breakfast();
+        WriteLine("Menu Item         Cost\n");
+        foreach (var item in menu)
+        {
+            if (item != "")
+            {
+                WriteLine(item);
+            }
+        }
+    }
+    public static string[] BreakfastItems()
+    {
+        string text = File.ReadAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Items.txt");
+        string[] items = text.Split("-");
+        
+        return items;
+    }
+    public static decimal[] BreakfastPrices()
+    {
+        string text = File.ReadAllText(@"C:\Users\Kiosk Records\Menus and Prices\Breakfast Prices.txt");
+        string[] items = text.Split("-");
+        decimal[] prices = new decimal[items.Length];
+        
+        for (var i = 0; i < items.Length; i++)
+        {
+            decimal.TryParse(items[i], out prices[i]);
+        }
+
+        return prices;
+    }
+    public static string[] Breakfast()
+    {
+        string[] items = BreakfastItems();
+        decimal[] prices = BreakfastPrices();
+        string[] menu = new string[items.Length-1];
+        
+        for (var i = 1; i < items.Length; i++)
+        {
+            if(prices[i] != 0)
+            {
+                menu[i-1] = $"{items[i]}{prices[i]:C2}";
+            }
+            else
+            {
+                menu[i] = "";
+            }
+        }
+        return menu;
+    }
+}
